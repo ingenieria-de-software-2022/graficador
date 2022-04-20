@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using info.lundin.math;
+
 
 namespace WFgraficador
 {
     public partial class Form1 : Form
     {
-        double xi, xf, x, y;
+        double xi, xf, x, y, yi, y1;
         int n;
+        string functionFx;
 
         public Form1()
         {
@@ -30,10 +33,17 @@ namespace WFgraficador
             System.Diagnostics.Process.Start("WFcruzlara_signature.exe");
         }
 
+        private void fxF1xButton_Click(object sender, EventArgs e)
+        {
+            inputProcess();
+            outputProcess();
+        }
+
         private void fx_Click(object sender, EventArgs e)
         {
             inputProcess();
             chartProcess();
+            outputProcess();
         }
 
         public void inputProcess()
@@ -42,6 +52,7 @@ namespace WFgraficador
             {
                 xi = double.Parse(textBoxXi.Text);
                 xf = double.Parse(textBoxXf.Text);
+                functionFx = textBoxFx.Text;
                 n = chart1.Width;
 
             }
@@ -55,15 +66,27 @@ namespace WFgraficador
         {
             double h;
             h = (xf - xi) / n;
-            chart1.Series["Series1"].Points.Clear();
-
+            yi = parsedFunction(xi, functionFx);
+            chart1.Series["Series1"].Points.AddXY(xi, yi);
 
             for (int k = 0; k < n; k++)
             {
                 x = xi + k * h;
-                y = Math.Cos(x);
+                y = parsedFunction(x, functionFx);
                 chart1.Series["Series1"].Points.AddXY(x, y);
             }
+        }
+        
+        public double parsedFunction(double x, string fx)
+        {
+            ExpressionParser parser1 = new ExpressionParser();
+            parser1.Values.Add("x", x);
+            return parser1.Parse(fx);            
+        }
+
+        public void outputProcess()
+        {
+
         }
     }
 }

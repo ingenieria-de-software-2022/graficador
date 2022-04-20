@@ -9,3 +9,5 @@ C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\De
 C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\Debug\WFgraficador.pdb
 C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.exe
 C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.pdb
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\Debug\info.lundin.math.dll
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.csproj.CopyComplete
