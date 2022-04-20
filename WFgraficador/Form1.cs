@@ -16,7 +16,7 @@ namespace WFgraficador
     {
         double xi, xf, x, y, yi, y1;
         int n;
-        string functionFx;
+        string functionFx, functionF1x;
 
         public Form1()
         {
@@ -36,6 +36,7 @@ namespace WFgraficador
         private void fxF1xButton_Click(object sender, EventArgs e)
         {
             inputProcess();
+            chartProcess2();
             outputProcess();
         }
 
@@ -53,6 +54,7 @@ namespace WFgraficador
                 xi = double.Parse(textBoxXi.Text);
                 xf = double.Parse(textBoxXf.Text);
                 functionFx = textBoxFx.Text;
+                functionF1x = textBoxF1x.Text;
                 n = chart1.Width;
 
             }
@@ -77,6 +79,24 @@ namespace WFgraficador
             }
         }
         
+        public void chartProcess2()
+        {
+            double h;
+            h = (xf - xi) / n;
+            yi = parsedFunction(xi, functionFx);
+            chart1.Series["Series1"].Points.AddXY(xi, yi);
+
+            for (int k = 0; k < n; k++)
+            {
+                x = xi + k * h;
+                y = parsedFunction(x, functionFx);
+                y1 = parsedFunction(x, functionF1x);
+                chart1.Series["Series1"].Points.AddXY(x, y);
+                chart1.Series["Series2"].Points.AddXY(x, y1);
+
+            }
+        }
+
         public double parsedFunction(double x, string fx)
         {
             ExpressionParser parser1 = new ExpressionParser();
