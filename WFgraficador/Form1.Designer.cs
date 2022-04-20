@@ -33,6 +33,8 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.input = new System.Windows.Forms.GroupBox();
+            this.textBoxF1x = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxFx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxXf = new System.Windows.Forms.TextBox();
@@ -44,13 +46,11 @@
             this.firmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.process = new System.Windows.Forms.GroupBox();
+            this.fxF1xButton = new System.Windows.Forms.Button();
             this.fx = new System.Windows.Forms.Button();
             this.output = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.listBoxOutput = new System.Windows.Forms.ListBox();
-            this.textBoxF1x = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.fxF1xButton = new System.Windows.Forms.Button();
             this.input.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.process.SuspendLayout();
@@ -74,6 +74,24 @@
             this.input.TabIndex = 0;
             this.input.TabStop = false;
             this.input.Text = "Entrada";
+            // 
+            // textBoxF1x
+            // 
+            this.textBoxF1x.Location = new System.Drawing.Point(46, 145);
+            this.textBoxF1x.Name = "textBoxF1x";
+            this.textBoxF1x.Size = new System.Drawing.Size(65, 20);
+            this.textBoxF1x.TabIndex = 7;
+            this.textBoxF1x.Text = "x";
+            this.textBoxF1x.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "f1(x)";
             // 
             // textBoxFx
             // 
@@ -172,6 +190,21 @@
             this.process.TabStop = false;
             this.process.Text = "Proceso";
             // 
+            // fxF1xButton
+            // 
+            this.fxF1xButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.fxF1xButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.fxF1xButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fxF1xButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fxF1xButton.Location = new System.Drawing.Point(16, 63);
+            this.fxF1xButton.Margin = new System.Windows.Forms.Padding(0);
+            this.fxF1xButton.Name = "fxF1xButton";
+            this.fxF1xButton.Size = new System.Drawing.Size(90, 26);
+            this.fxF1xButton.TabIndex = 1;
+            this.fxF1xButton.Text = "Graficar y1, y2";
+            this.fxF1xButton.UseVisualStyleBackColor = false;
+            this.fxF1xButton.Click += new System.EventHandler(this.fxF1xButton_Click);
+            // 
             // fx
             // 
             this.fx.BackColor = System.Drawing.Color.SteelBlue;
@@ -222,45 +255,13 @@
             // listBoxOutput
             // 
             this.listBoxOutput.FormattingEnabled = true;
+            this.listBoxOutput.HorizontalScrollbar = true;
             this.listBoxOutput.Items.AddRange(new object[] {
             " "});
             this.listBoxOutput.Location = new System.Drawing.Point(17, 31);
             this.listBoxOutput.Name = "listBoxOutput";
             this.listBoxOutput.Size = new System.Drawing.Size(272, 459);
             this.listBoxOutput.TabIndex = 0;
-            // 
-            // textBoxF1x
-            // 
-            this.textBoxF1x.Location = new System.Drawing.Point(46, 145);
-            this.textBoxF1x.Name = "textBoxF1x";
-            this.textBoxF1x.Size = new System.Drawing.Size(65, 20);
-            this.textBoxF1x.TabIndex = 7;
-            this.textBoxF1x.Text = "x";
-            this.textBoxF1x.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "f1(x)";
-            // 
-            // fxF1xButton
-            // 
-            this.fxF1xButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.fxF1xButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.fxF1xButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fxF1xButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fxF1xButton.Location = new System.Drawing.Point(16, 63);
-            this.fxF1xButton.Margin = new System.Windows.Forms.Padding(0);
-            this.fxF1xButton.Name = "fxF1xButton";
-            this.fxF1xButton.Size = new System.Drawing.Size(90, 26);
-            this.fxF1xButton.TabIndex = 1;
-            this.fxF1xButton.Text = "Graficar y1, y2";
-            this.fxF1xButton.UseVisualStyleBackColor = false;
-            this.fxF1xButton.Click += new System.EventHandler(this.fxF1xButton_Click);
             // 
             // Form1
             // 

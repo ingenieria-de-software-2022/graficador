@@ -69,13 +69,15 @@ namespace WFgraficador
             double h;
             h = (xf - xi) / n;
             yi = parsedFunction(xi, functionFx);
-            chart1.Series["Series1"].Points.AddXY(xi, yi);
+            chart1.Series["Series1"].Points.Clear();
+            listBoxOutput.Items.Clear();
 
             for (int k = 0; k < n; k++)
             {
                 x = xi + k * h;
                 y = parsedFunction(x, functionFx);
                 chart1.Series["Series1"].Points.AddXY(x, y);
+                listBoxOutput.Items.Add(x + "\t\t" + y);
             }
         }
         
