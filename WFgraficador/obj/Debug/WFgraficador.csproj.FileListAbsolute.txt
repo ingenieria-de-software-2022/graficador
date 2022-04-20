@@ -1,0 +1,11 @@
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.csproj.AssemblyReference.cache
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.csproj.SuggestedBindingRedirects.cache
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.Form1.resources
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.Properties.Resources.resources
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.csproj.GenerateResource.cache
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.csproj.CoreCompileInputs.cache
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\Debug\WFgraficador.exe.config
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\Debug\WFgraficador.exe
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\bin\Debug\WFgraficador.pdb
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.exe
+C:\Users\lange\Downloads\ingenieria-de-software\WFgraficador\WFgraficador\obj\Debug\WFgraficador.pdb
