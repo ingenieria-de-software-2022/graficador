@@ -14,9 +14,9 @@ namespace WFgraficador
 {
     public partial class Form1 : Form
     {
-        double xi, xf, x, y, yi, y1;
+        double xi, xf, x, y, yi, y1, angle, magnitude;
         int n;
-        string functionFx, functionF1x;
+        string functionFx, functionF1x, functionFpolar;
 
         public Form1()
         {
@@ -37,6 +37,13 @@ namespace WFgraficador
         {
             inputProcess();
             chartProcess2();
+            outputProcess();
+        }
+
+        private void rga_Click(object sender, EventArgs e)
+        {
+            inputProcess();
+            chartPolarProcess();
             outputProcess();
         }
 
@@ -69,14 +76,14 @@ namespace WFgraficador
             double h;
             h = (xf - xi) / n;
             yi = parsedFunction(xi, functionFx);
-            chart1.Series["Series1"].Points.Clear();
+            chart2.Series["Series1"].Points.Clear();
             listBoxOutput.Items.Clear();
 
             for (int k = 0; k < n; k++)
             {
                 x = xi + k * h;
                 y = parsedFunction(x, functionFx);
-                chart1.Series["Series1"].Points.AddXY(x, y);
+                chart2.Series["Series1"].Points.AddXY(x, y);
                 listBoxOutput.Items.Add(x + "\t\t" + y);
             }
         }
@@ -86,7 +93,9 @@ namespace WFgraficador
             double h;
             h = (xf - xi) / n;
             yi = parsedFunction(xi, functionFx);
-            chart1.Series["Series1"].Points.AddXY(xi, yi);
+            chart1.Series["Series1"].Points.Clear();
+            chart1.Series["Series2"].Points.Clear();
+            listBoxOutput.Items.Clear();
 
             for (int k = 0; k < n; k++)
             {
@@ -95,7 +104,25 @@ namespace WFgraficador
                 y1 = parsedFunction(x, functionF1x);
                 chart1.Series["Series1"].Points.AddXY(x, y);
                 chart1.Series["Series2"].Points.AddXY(x, y1);
+                listBoxOutput.Items.Add(x + "\t\t" + y);
+            }
+        }
+         
+        public void chartPolarProcess()
+        {            
+            double h;
+            h = (xf - xi) / n;
+            chart3.Series["Series1"].Points.Clear();
+            listBoxOutput.Items.Clear();
 
+            for (int k = 0; k < n; k++)
+            {
+                angle = xi + k * h;
+                magnitude = parsedFunction(angle, functionFx);
+                x = magnitude * Math.Cos(angle);
+                y = magnitude * Math.Sin(angle);
+                chart3.Series["Series1"].Points.AddXY(x, y);
+                listBoxOutput.Items.Add(angle + "\t\t" + magnitude);
             }
         }
 
