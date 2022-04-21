@@ -14,7 +14,7 @@ namespace WFgraficador
 {
     public partial class Form1 : Form
     {
-        double xi, xf, x, y, yi, y1, angle, magnitude;
+        double xi, xf, x, y, yi, y1, angle, magnitude, t;
         int n;
         string functionFx, functionF1x, functionFpolar;
 
@@ -31,6 +31,13 @@ namespace WFgraficador
         private void firmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("WFcruzlara_signature.exe");
+        }
+
+        private void fxFt_Click(object sender, EventArgs e)
+        {
+            inputProcess();
+            chartParametricProcess();
+            outputProcess();
         }
 
         private void fxF1xButton_Click(object sender, EventArgs e)
@@ -85,6 +92,23 @@ namespace WFgraficador
                 y = parsedFunction(x, functionFx);
                 chart2.Series["Series1"].Points.AddXY(x, y);
                 listBoxOutput.Items.Add(x + "\t\t" + y);
+            }
+        }
+        
+        public void chartParametricProcess()
+        {
+            double h;
+            h = (xf - xi) / n;
+            chart4.Series["Series1"].Points.Clear();
+            listBoxOutput.Items.Clear();
+
+            for (int k = 0; k < n; k++)
+            {
+                t = xi + k * h;
+                x = parsedFunction(t, functionFx);
+                y = parsedFunction(t, functionF1x);
+                chart4.Series["Series1"].Points.AddXY(x, y);
+                listBoxOutput.Items.Add(t + "\t\t" + x + "\t\t" + y);
             }
         }
         
