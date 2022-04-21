@@ -47,6 +47,13 @@ namespace WFgraficador
             outputProcess();
         }
 
+        private void lissajous_Click(object sender, EventArgs e)
+        {
+            inputProcess();
+            chartLissajousProcess();
+            outputProcess();
+        }
+
         private void rga_Click(object sender, EventArgs e)
         {
             inputProcess();
@@ -111,7 +118,27 @@ namespace WFgraficador
                 listBoxOutput.Items.Add(t + "\t\t" + x + "\t\t" + y);
             }
         }
-        
+
+        public void chartLissajousProcess()
+        {
+            double h, A, B, w1, w2;
+            h = (xf - xi) / n;
+            A = B = 10;
+            w1 = 2 * Math.PI;
+            w2 = 2 * w1;
+            chart5.Series["Series1"].Points.Clear();
+            listBoxOutput.Items.Clear();
+
+            for (int k = 0; k < n; k++)
+            {
+                t = xi + k * h;
+                x = A * Math.Cos(w1 * t);
+                y = B * Math.Sin(w2 * t);
+                chart5.Series["Series1"].Points.AddXY(x, y);
+                listBoxOutput.Items.Add(x + "\t\t" + y);
+            }
+        }
+
         public void chartProcess2()
         {
             double h;
